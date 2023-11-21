@@ -1,0 +1,465 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    char fullname[30], gotobeginning;
+    int tn;
+    int option = 0, cardoption, cardoption1, qty, option_price;
+    char bf1[] = "IDLI", bf2[] = "DOSA", bf3[] = "PONGAL", bf4[] = "OTHERS",
+        bev1[] = "7-UP,MAZA,SPRITE", bev2[] = "TEA,COFFEE", bev3[] = "FRESH-JUICE",
+        lh1[] = "VEGTERAIN", lh2[] = "NON-VEGETARIAN", lh3[] = "FAST-FOOD",
+        d1[] = "Chappathi", d2[] = "Parotta", d3[] = "OTHERS",
+        de1[] = "VANILA", de2[] = "BUTTER-SCOTCH", de3[] = "BLACK-CURRENT";
+
+
+
+
+    printf("\t\t\t|-------------------------------------------------------|\n");
+    printf("\t\t\t|              TRICHY FOOD-HUB        |\n");
+    printf("\t\t\t|     NH-38,PANJAPPUR OUTER RING-ROAD,TRICHY-09      |\n");
+    printf("\t\t\t|-------------------------------------------------------|\n\n");
+    printf("Please Enter Your Table Number: ");
+    scanf("%d",&tn);
+    printf("%d\n\nWhat would you like to order?\n\n",tn);
+t1:
+    printf("\t\t\t|-------------------------------------------------------|\n");
+    printf("\t\t\t|                      Food Menu                   |\n");
+    printf("\t\t\t|-------------------------------------------------------|\n\n");
+
+    printf("[Choice 1] BREAKFAST\n");
+    printf("[Choice 2] LUNCH\n");
+    printf("[Choice 3] DINNER\n");
+    printf("[Choice 4] BEVARAGES\n");
+    printf("[Choice 5] DESERTS\n\n");
+    printf("\nPlease Enter your Choice: ");
+    scanf("%d", &option);
+
+    if (option == 1) 
+    {
+        printf("\n1) %s\n", bf1);
+        printf("2) %s\n", bf2);
+        printf("3) %s\n", bf3);
+        printf("4) %s\n", bf4);
+        printf("\nPlease Enter What would you like to have?:");
+        scanf("%d", &cardoption);
+        if (cardoption ==1) 
+        {
+            printf("\n1) Ordinary Rs.25.00\n2) Sambar IdlyRs.40.00\n3) Podi Idly Rs.50.00\n");
+            printf("\nChoose Variety Please: ");
+            scanf("%d", &cardoption1);
+            if (cardoption1 >= 1 && cardoption1 <= 3) 
+            {
+                printf("\nPlease Enter Quantity: ");
+                scanf("%d", &qty);
+                switch (cardoption1) {
+                    case 1:
+                        option_price = 25*qty;
+                        break;
+                    case 2:
+                        option_price = 40*qty;
+                        break;
+                    case 3:
+                        option_price = 50*qty;
+                        break;
+            }
+
+                printf("\n\t\t\t--------Your Order---------\n");
+                printf("%d %s\n", qty, cardoption == 1 ? bf1 : (cardoption1 == 2 ? bf2 : (cardoption == 3 ? bf3 : bf4)));
+                printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+                printf("\nThank You Visit Us Again..!\n");
+                printf("Would you like to order anything else? Y / N: ");
+                scanf(" %c", &gotobeginning);
+                if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                    goto t1;
+                }
+            }
+        }
+        if (cardoption ==2) 
+        {
+            printf("\n1) Normal Rs.25.00\n2) Rava Dosa Rs.50.00\n3) Ghee Roast Rs60.00\n");
+            printf("\nChoose Variety Please: ");
+            scanf("%d", &cardoption1);
+            if (cardoption1 >= 1 && cardoption1 <= 3) 
+            {
+                printf("\nPlease Enter Quantity: ");
+                scanf("%d", &qty);
+                switch (cardoption1) {
+                    case 1:
+                        option_price = 25*qty;
+                        break;
+                    case 2:
+                        option_price = 50*qty;
+                        break;
+                    case 3:
+                        option_price = 60*qty;
+                        break;
+            }
+
+                printf("\n\t\t\t--------Your Order---------\n");
+                printf("%d %s\n", qty, cardoption == 1 ? bf1 : (cardoption == 2 ? bf2 : (cardoption == 3 ? bf3 : bf4)));
+                printf("Your Total Bill is \nRS.%d\nYour Order Will be delivered As Soon As Possible\n", option_price);
+                printf("\nThank you Visit Us Again\n");
+                printf("Would you like to order anything else? Y / N: ");
+                scanf(" %c", &gotobeginning);
+                if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                    goto t1;
+                }
+            }
+        }
+        if (cardoption ==3) 
+        {
+            printf("\n1) Sweet Pongal Rs.25.00\n2) Venpongal Rs.40.00\n3) RavaPongal Rs.40.00\n");
+            printf("\nChoose Variety Please: ");
+            scanf("%d", &cardoption1);
+            if (cardoption1 >= 1 && cardoption1 <= 3) 
+            {
+                printf("\nPlease Enter Quantity: ");
+                scanf("%d", &qty);
+                switch (cardoption1) {
+                    case 1:
+                        option_price = 25*qty;
+                        break;
+                    case 2:
+                        option_price = 40*qty;
+                        break;
+                    case 3:
+                        option_price = 40*qty;
+                        break;
+            }
+
+                printf("\n\t\t\t--------Your Order---------\n");
+                printf("%d %s\n", qty, cardoption == 1 ? bf1 : (cardoption == 2 ? bf2 : (cardoption == 3 ? bf3 : bf4)));
+                printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+                printf("\nThank You Visit Us Again...!\n");
+                printf("Would you like to order anything else? Y / N: ");
+                scanf(" %c", &gotobeginning);
+                if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                    goto t1;
+                }
+            }
+        }
+        if (cardoption ==4) 
+        {
+            printf("\n1) POORI SET Rs.30.00\n2) IDIYAPPAM Rs.30.00\n3) PANNIYARAM Rs.20.00\n");
+            printf("\nChoose Variety Please: ");
+            scanf("%d", &cardoption1);
+            if (cardoption1 >= 1 && cardoption1 <= 3) 
+            {
+                printf("\nPlease Enter Quantity: ");
+                scanf("%d", &qty);
+                switch (cardoption1) {
+                    case 1:
+                        option_price = 30*qty;
+                        break;
+                    case 2:
+                        option_price = 30*qty;
+                        break;
+                    case 3:
+                        option_price = 20*qty;
+                        break;
+            }
+
+                printf("\n\t\t\t--------Your Order---------\n");
+                printf("%d %s\n", qty, cardoption == 1 ? bf1 : (cardoption == 2 ? bf2 : (cardoption == 3 ? bf3 : bf4)));
+                printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+                printf("\nThank You Visit Us Again...!\n");
+                printf("Would you like to order anything else? Y / N: ");
+                scanf(" %c", &gotobeginning);
+                if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                    goto t1;
+                }
+            }
+        }
+    } 
+    //
+    else if (option == 2)
+    {
+        printf("\n1 %s\n", lh1);
+        printf("2 %s\n", lh2);
+        printf("3 %s\n", lh3);
+        printf("\nPlease Enter What would you like to have?:");
+        scanf("%d", &cardoption1);
+
+        if (cardoption1==1) 
+        {
+        printf("\n1) MEALS Rs.80.00\n2) VARIETY RICE Rs.35.00\n3) HALF-MEALS Rs.50.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3) 
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 80* qty;
+                    break;
+                case 2:
+                    option_price = 35* qty;
+                    break;
+                case 3:
+                    option_price = 50* qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? lh1 : (cardoption1 == 2 ? lh2 : lh3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                goto t1;
+            }
+        }
+        }
+        //
+        if (cardoption1==2) 
+        {
+        printf("\n1) MEALS Rs.100.00\n2) BIRIYANI Rs.95.00\n3) EMPTY-BIRIYANI Rs.50.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3) 
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 100* qty;
+                    break;
+                case 2:
+                    option_price = 95* qty;
+                    break;
+                case 3:
+                    option_price = 50* qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? lh1 : (cardoption1 == 2 ? lh2 : lh3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                goto t1;
+            }
+        }
+        }
+
+        if (cardoption1==3) 
+        {
+        printf("\n1) VEG-FRIED RICE Rs.50.00\n2) CHICKEN RICE Rs.80.00\n3) NOODLES Rs.50.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3) 
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 50* qty;
+                    break;
+                case 2:
+                    option_price = 80* qty;
+                    break;
+                case 3:
+                    option_price = 50* qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? lh1 : (cardoption1 == 2 ? lh2 : lh3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                goto t1;
+            }
+        }
+        }
+        //
+    } 
+    else if (option == 3) 
+    {
+        printf("\n1 %s\n", d1);
+        printf("2 %s\n", d2);
+        printf("3 %s\n", d3);
+        printf("\nPlease Enter What would you like to have?:");
+        scanf("%d",&cardoption1);
+        if (cardoption1==1) 
+        {
+        printf("\n1) CHAPPATHI Rs.40.00\n2) BUTTER-NAN Rs.50.00\n3)  CHILLI-CHAPPATHIRs.50.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3)
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 40*qty;
+                    break;
+                case 2:
+                    option_price = 50*qty;
+                    break;
+                case 3:
+                    option_price = 50*qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? d1 : (cardoption1 == 2 ? d2 : d3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                goto t1;
+            }
+        }
+        }
+        if (cardoption1==2) 
+        {
+        printf("\n1) KOTHU-PAROTTA Rs.80.00\n2) BUN-PARROTA(3) Rs.18.00\n3) VECHU-PAROTTA(2) Rs.50.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3)
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 80*qty;
+                    break;
+                case 2:
+                    option_price = 18*qty;
+                    break;
+                case 3:
+                    option_price = 50*qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? d1 : (cardoption1 == 2 ? d2 : d3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') {
+                goto t1;
+            }
+        }
+        }
+    } 
+    if (cardoption1==3) 
+        {
+        printf("\n1) IDLI(2) Rs.10.00\n2) UTHAPAM Rs.30.00\n3) PUTTU Rs.35.00\n");
+        printf("\nChoose Variety Please: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3)
+        {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 10*qty;
+                    break;
+                case 2:
+                    option_price = 30*qty;
+                    break;
+                case 3:
+                    option_price = 35*qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? d1 : (cardoption1 == 2 ? d2 : d3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Wo uld you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y')
+            {
+                goto t1;
+            }
+        }
+
+    } 
+    //
+    else if (option == 4) {
+        printf("\n1 %s\n", bev1);
+        printf("2 %s\n", bev2);
+        printf("3 %s\n", bev3);
+        printf("\nPlease Enter which you would like to have?: ");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3) 
+        {
+            printf("\nHow Much Drinks Do you want: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 20*qty;
+                    break;
+                case 2:
+                    option_price = 15*qty;
+                    break;
+                case 3:
+                    option_price = 40*qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? bev1 : (cardoption1 == 2 ? bev2 : bev3));
+            printf("Your Total Bill is \nRS.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("\nThank You Visit Us Again...!\n");
+            printf("Wo uld you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y')
+            {
+                goto t1;
+            }
+        }
+    } 
+    else if (option == 5) 
+    {
+        printf("\n1 %s Rs.30\n", de1);
+        printf("2 %s Rs.50\n", de2);
+        printf("3 %s Rs.60\n", de3);
+        printf("\nWhich Deserts you would like to have?:");
+        scanf("%d", &cardoption1);
+        if (cardoption1 >= 1 && cardoption1 <= 3) {
+            printf("\nPlease Enter Quantity: ");
+            scanf("%d", &qty);
+            switch (cardoption1) {
+                case 1:
+                    option_price = 30* qty;
+                    break;
+                case 2:
+                    option_price = 50* qty;
+                    break;
+                case 3:
+                    option_price = 60* qty;
+                    break;
+            }
+            printf("\n\t\t--------Your Order---------\n");
+            printf("%d %s\n", qty, cardoption1 == 1 ? de1 : (cardoption1 == 2 ? de2 : de3));
+            printf("Your Total Bill is \nRs.%d\nYour Order Will Be Delivered As Soon As Possible\n", option_price);
+            printf("Would you like to order anything else? Y / N: ");
+            scanf(" %c", &gotobeginning);
+            if (gotobeginning == 'Y' || gotobeginning == 'y') 
+            {
+                goto t1;
+            }
+        }
+    } 
+    else
+    {
+        printf("Please Select Right Choice: \n");
+        printf("Would You like to Start the program again? Y / N: ");
+        scanf(" %c", &gotobeginning);
+        if (gotobeginning == 'Y' || gotobeginning == 'y') 
+        {
+            goto t1;
+        }
+    }
+return 0;
+}
+
+
+
+/* A GROUP-PROJECT BY SURENDAR,ASWIN,NAVIN,PRIYADHARSHAN*/
